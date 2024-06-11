@@ -53,16 +53,17 @@ $nav_links = [
 @push('header-scripts')
 <script type="text/javascript">
     $(document).ready(function() {
-        console.log('hi')
-        const $navOverlay = document.getElementById('w-nav-overlay-0')
+
+        const $navOverlay = $('#w-nav-overlay-0');
 
         $('.box-burger').on('click', function() {
-            console.log('hello')
-            $navOverlay.style.display = 'block'
-            $navOverlay.style.height = '19206.6px'
-
-        })
-
+            if ($navOverlay.is(':visible')) {
+                $navOverlay.hide();
+            } else {
+                $navOverlay.show();
+                $navOverlay.css('height', '19206.6px');
+            }
+        });
 
     })
 
